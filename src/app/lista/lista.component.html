@@ -1,0 +1,31 @@
+<div class="row">
+  <div
+    *ngFor="let devolucion of devoluciones"
+    class="card m-2"
+    data-bs-theme="dark"
+    style="width: 18rem"
+  >
+    <div class="card-body">
+      <h5 class="card-title">Id prestamo: {{ devolucion.idPrestamo }}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        fecha retorno
+        {{ devolucion.fechaRetorno }}
+      </h6>
+      <button
+        type="button"
+        (click)="deleteDevolucion(devolucion.id!)"
+        class="btn btn-danger"
+      >
+        Eliminar
+      </button>
+
+      <button
+        type="button"
+        (click)="changeDevolucion(devolucion.id!)"
+        class="btn btn-warning"
+      >
+        Editar
+      </button>
+    </div>
+  </div>
+</div>
